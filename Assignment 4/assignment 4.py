@@ -7,11 +7,10 @@
 
 
 try:
-    file = open("sample.txt", 'r')
-    reading_line = file.read()
-    print("reading file contents")
-    print(reading_line)
-
+    with open("sample.txt", 'r') as file:
+        for num, line in enumerate(file, 1):
+            line = line.strip()
+            print(f"line {num}: {line}")
 
 except FileNotFoundError:
     print("ERROR:The file " 'sample.txt' " not found. ")
