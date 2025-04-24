@@ -7,12 +7,10 @@
 student_marks={"shubham":"87","Alice":"67","nina":"97","mina":"85","rin":"81","rohit":"91"}
 name=str(input("enter the name of the student:"))
 low_name=name.lower()
-print(low_name)
 lower_key={}
 for key, value in student_marks.items():
     lowkey=key.lower()
-    lower_key={lowkey:value}
-    print(lower_key)
+    lower_key.update({lowkey:value})
 
 if low_name in lower_key:
     mark = lower_key[low_name]
@@ -20,6 +18,7 @@ if low_name in lower_key:
 
 else:
     print("student not found")
+
 
 #Task 2: Demonstrate List Slicing
 
